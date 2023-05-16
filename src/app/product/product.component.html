@@ -1,0 +1,21 @@
+<div class="card" style="height: 600px;" >
+    <img class="card-img-top h-50" [src]="product.thumbnail" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text"> Price : {{product.price | price}} </p>
+      <hr>
+
+      <p class="card-text"> Discount: {{product.discountPercentage |discount}}</p>
+      <hr>
+
+      <p class="card-text "[ngStyle]="{'color':(product.stock > 0 ) ? 'green' : 'red' }"> {{product.stock | stock}} </p>
+      <hr>
+      <p class="card-text" >{{product.createdAt| date:"MMMM-yyyy" }}</p>
+      <div class="d-flex">
+        <a class="btn btn-primary w-20 mx-2 " (click)="emitToParent()">See More</a>
+        <a class="btn btn-primary w-20 mx-2" routerLink="cart" >add To Card</a>
+      </div>
+    
+
+    </div>
+  </div>

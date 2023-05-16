@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-lg-9 mx-auto">
+        <div class="card">
+            <img class="card-img-top" [src]="product.thumbnail" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Name : {{product.title}}</h5>
+              <hr>
+              <p class="card-text"> Description : {{product.description |discount}}</p>
+              <hr>
+              <p class="card-text"> Price : {{product.price | price}} </p>
+              <hr>
+              <p class="card-text"> Discount: {{product.discountPercentage}}</p>
+              <hr>
+              <p class="card-text "[ngStyle]="{'color':(product.stock > 0 ) ? 'green' : 'red' }"> {{product.stock | stock}} </p>
+              <hr>
+              <p class="card-text" >{{product.createdAt| date:"MMMM-yyyy" }}</p>              <hr>
+
+              <p class="card-text">Brand {{product.brand}}</p>
+              <hr>
+
+              <p class="card-text"> Category :{{product.category}}</p>
+              <hr>
+                <a class="btn btn-primary"  >Add To Card</a>
+
+
+
+
+            </div>
+          </div>
+    </div>
+</div>
