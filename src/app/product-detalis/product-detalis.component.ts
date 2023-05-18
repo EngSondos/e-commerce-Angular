@@ -1,3 +1,4 @@
+import { CartService } from './../services/cart.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../Interfaces/product';
@@ -12,9 +13,12 @@ import data from '../../assets/products-list.json';
 export class ProductDetalisComponent {
   listproduct:Product[]=data;
   product:any;
-  constructor(private activetedRoute:ActivatedRoute){}
+  constructor(private activetedRoute:ActivatedRoute, private serviceCart:CartService){}
   ngOnInit(){
     // console.log(this.activetedRoute.snapshot.params['id'])
    this.product= this.listproduct.find( element => element.id ==this.activetedRoute.snapshot.params['id'])
+  }
+  AddToCart(){
+    this.serviceCart.AddProductToCart(this.product);
   }
 }

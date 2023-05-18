@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { count } from 'rxjs';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  count!:number;
+constructor(private CartService:CartService){
+}
+ngOnInit(){
+   this.CartService.cartCountValue.subscribe((val)=>{ this.count=val})
+}
 
 }
