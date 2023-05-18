@@ -1,104 +1,104 @@
 <div class=" w-50 mx-auto ">
     <div class="">
-        <h1 class="text-primary text-center">Registeration Form</h1>
+        <h1 class="text-primary text-center">Registration Form</h1>
     </div>
     <form class="border p-4" [formGroup]="registerForm" (ngSubmit)="registration()">
         <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
-      
-            <input type="name" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Enter name" 
+
+            <input type="name" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Enter name"
             formControlName="name"
             name="name"
             [ngClass]=" {'border border-danger ' : registerForm.controls['name'].touched && registerForm.controls['name'].invalid}"
             >
-            <div 
-            *ngIf="registerForm.controls['name'].touched 
+            <div
+            *ngIf="registerForm.controls['name'].touched
             && registerForm.controls['name'].invalid">
-  
+
               <small id="nameHelp" class="form-text text-danger "
                *ngIf="
-               
+
                registerForm.controls['name'].errors?.['required']">
-                    name is required      
+                    name is required
               </small>
-  
+
             </div>
-           
+
           </div>
           <div class="form-group">
             <label for="exampleInputuserName1">User Name </label>
-      
-            <input type="text" class="form-control" id="exampleInputUserName1" aria-describedby="nameHelp" placeholder="Enter userName" 
+
+            <input type="text" class="form-control" id="exampleInputUserName1" aria-describedby="nameHelp" placeholder="Enter userName"
             formControlName="userName"
             name="userName"
             [ngClass]=" {'border border-danger ' : registerForm.controls['userName'].touched && registerForm.controls['userName'].invalid}"
             >
-            <div 
-            *ngIf="registerForm.controls['userName'].touched 
+            <div
+            *ngIf="registerForm.controls['userName'].touched
             && registerForm.controls['userName'].invalid">
-  
+
               <small id="nameHelp" class="form-text text-danger "
                *ngIf="
-               
+
                registerForm.controls['userName'].errors?.['required']">
-                    userName is required      
+                    userName is required
               </small>
 
               <small id="nameHelp" class="form-text text-danger "
                *ngIf="
-               
+
                registerForm.controls['userName'].errors?.['pattern']">
-                    userName must be with no space     
+                    userName must be with no space
               </small>
             </div>
-           
+
           </div>
 
-          
+
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-    
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" 
+
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
           formControlName="email"
           name="email"
           [ngClass]=" {'border border-danger ' : registerForm.controls['email'].touched && registerForm.controls['email'].invalid}"
           >
-          <div 
-          *ngIf="registerForm.controls['email'].touched 
+          <div
+          *ngIf="registerForm.controls['email'].touched
           && registerForm.controls['email'].invalid">
 
             <small id="emailHelp" class="form-text text-danger "
              *ngIf="
-             
+
              registerForm.controls['email'].errors?.['required']">
-                  Email is required      
+                  Email is required
             </small>
 
             <small id="emailHelp" class="form-text text-danger "
             *ngIf="registerForm.controls['email'].errors?.['email']">
-                Invalid Email     
+                Invalid Email
            </small>
 
           </div>
-         
+
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
           [ngClass]=" {'
-          border border-danger ' : 
-          registerForm.controls['password'].touched && 
+          border border-danger ' :
+          registerForm.controls['password'].touched &&
           registerForm.controls['password'].invalid}"
           formControlName="password"
           name="password"
           >
           <div *ngIf="
-        registerForm.controls['password'].touched && 
+        registerForm.controls['password'].touched &&
         registerForm.controls['password'].invalid">
 
             <small id="registerForm.passwordHelp" class="form-text text-danger "
              *ngIf="registerForm.controls['password'].errors?.['required']">
-                  password is required      
+                  password is required
             </small>
 
           </div>
@@ -109,30 +109,30 @@
             <label for="exampleInputCoPassword1">Confirmed Password</label>
             <input type="password" class="form-control" id="exampleInputCoPassword1" placeholder="Confirmed Password"
             [ngClass]=" {'
-            border border-danger ' : 
-            registerForm.controls['confirmPassword'].touched && 
+            border border-danger ' :
+            registerForm.controls['confirmPassword'].touched &&
             registerForm.controls['confirmPassword'].invalid}"
             formControlName="confirmPassword"
             name="confirmPassword"
             >
             <div *ngIf="
-          registerForm.controls['confirmPassword'].touched && 
+          registerForm.controls['confirmPassword'].touched &&
           registerForm.controls['confirmPassword'].invalid">
-  
+
               <small id="registerForm.passwordHelp" class="form-text text-danger "
                *ngIf="registerForm.controls['confirmPassword'].errors?.['required']">
-               confirmPassword is required      
+               confirmPassword is required
               </small>
 
               <small id="registerForm.passwordHelp" class="form-text text-danger "
               *ngIf="registerForm.controls['confirmPassword'].errors?.['match']">
-              confirmPassword is not Matched      
+              confirmPassword is not Matched
              </small>
-  
+
             </div>
           </div>
 
-        
+
 
 
         <div class="form-check">
@@ -141,5 +141,4 @@
         </div>
         <button type="submit" class="btn btn-primary w-100">Submit</button>
       </form>
-      <div class="mt-4">Dont Have Acoount <a routerLink="/register" class="text-primary">Register</a></div>
 </div>

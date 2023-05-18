@@ -11,7 +11,6 @@ export interface Product {
      category : string,
      thumbnail : string,
      images : string[],
-     createdAt :string,
      count?:number
 
 

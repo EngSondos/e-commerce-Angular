@@ -15,6 +15,7 @@ import { StockPipe } from './Piplines/stock.pipe';
 import { PricePipe } from './Piplines/price.pipe';
 import { DiscountPipe } from './Piplines/discount.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import{HttpClientModule} from'@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

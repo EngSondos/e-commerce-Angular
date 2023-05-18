@@ -37,14 +37,17 @@
               </div>
               <div class="col-md-2 d-flex justify-content-center">
                 <div>
-                  <p class="small text-muted mb-4 pb-2">Price</p>
                   <p class="lead fw-normal mb-0">{{product.price|price}}</p>
                 </div>
               </div>
               <div class="col-md-2 d-flex justify-content-center">
                 <div>
-                  <p class="small text-muted mb-4 pb-2">Total</p>
                   <p class="lead fw-normal mb-0">{{product.count! * product.price |price}}</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <a class="mb-0"(click)="deleteX(product)"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
@@ -57,7 +60,7 @@
 
             <div class="float-end">
               <p class="mb-0 me-5 d-flex align-items-center">
-                <span class="small text-muted me-2">Order total:</span> <span 
+                <span class="small text-muted me-2">Order total:</span> <span
                   class="lead fw-normal">{{totalPrice}}</span>
               </p>
             </div>

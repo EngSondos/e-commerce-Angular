@@ -17,6 +17,7 @@ export class ProductComponent {
     this.cartService.cartCountValue.subscribe((val)=>this.count=val);
   }
 
+
   emitToParent(){
     this.emitter.emit(this.product.id)
   }

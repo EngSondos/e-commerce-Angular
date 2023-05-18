@@ -54,8 +54,10 @@ deleteOne(product:Product ,event:any)
 }
 deleteX(product:Product)
 {
+  this.service.changeCartCount(this.count-product.count!)
   this.service.deleteProduct(product)
   this.service.getTotalPrice()
+
 
 }
 }
