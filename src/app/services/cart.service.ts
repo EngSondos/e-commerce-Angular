@@ -9,8 +9,12 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
   private cartCount = new BehaviorSubject(0);
   private productInCart=new BehaviorSubject<Product[]>([]);
+  private total = new BehaviorSubject(0);
+
   cartCountValue= this.cartCount.asObservable();
   productsInCart=this.productInCart.asObservable();
+  totalPrice=this.total.asObservable();
+
   constructor() { }
 
   changeCartCount(value:number){
@@ -26,9 +30,21 @@ export class CartService {
     this.productInCart.next(this.productInCart.value.concat(product));
     return null
   }
-  deleteProduct(){
+  deleteProduct(product:Product){
 
-    // this.productInCart.next();
-
+    this.productInCart.next(this.productInCart.value.filter((elemnt)=>{
+      return elemnt.id !=product.id
+    }));
+    product.count=0
   }
+totalnum:number=0
+  getTotalPrice()
+{
+  this.totalnum=0;
+  this.productInCart.value.map((element)=>{
+    this.totalnum +=element.count!*element.price
+  })
+  this.total.next(this.totalnum)
+
+}
 }

@@ -22,7 +22,6 @@ export class ProductComponent {
   }
   AddToCart(){
     this.cartService.AddProductToCart(this.product);
-    // console.log(this.cartService.productsInCart.subscribe((val)=>console.log(val)))
     this.cartService.changeCartCount(++this.count);
   }
 }
